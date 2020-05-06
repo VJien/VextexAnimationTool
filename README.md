@@ -1,4 +1,3 @@
-# 使用说明
 
 > 本文介绍从max到UE4顶点动画实现流程
 >
@@ -6,34 +5,34 @@
 
 
 
-![Alt text](http://i1.fuimg.com/717505/c5c6da268a619ee0.gif)
+![Alt text](https://img.supervj.top/imgd1.gif)
 
+[脚本下载](https://github.com/VJien/VextexAnimationTool.git)
 
-
-### 1.顶点缓存脚本
+### 顶点缓存脚本
 
 - **如果是非骨骼动画，可以直接跳过此步骤**
 
 用顶点缓存脚本把骨骼动画信息保存到==pointCache修改器==内，脚本界面如下
 
-![Alt text](http://i2.tiimg.com/717505/1c9cfcd03472084e.jpg)
+![Alt text](https://img.supervj.top/imgd2.jpg)
 
 - 缓存文件可以选择自定义路径
 - 烘培范围默认是时间轴的时间，一般不需要自定义
 
 完成后如下图所示
 
-![Alt text](http://i2.tiimg.com/717505/9462937f8f4573ee.jpg)
+![Alt text](https://img.supervj.top/imgvertexAnim_pointCache.jpg)
 
 skin修改器会被自动禁用，然后就可以进入下一步骤
 
 
 
-### 2.用顶点动画导出工具
+### 用顶点动画导出工具
 
 脚本界面如下 
 
-<img src="http://i2.tiimg.com/717505/c2df338a4f541768.jpg" alt="Alt text" style="zoom:50%;" />
+![Alt text](https://img.supervj.top/imgd4.jpg)
 
 - 动画设置的的开始和结束一般不用修改，**间隔**参数后有详细数据测试
 - 压缩格式和渲染通道不建议修改
@@ -43,7 +42,7 @@ skin修改器会被自动禁用，然后就可以进入下一步骤
 
 点击【开始烘培】后选择目录保存2张贴图，然后模型窗口自动生成后缀为**MorpohExport**的模型，选择导出【**非动画模型**】，得到如下图
 
-![Alt text](http://i2.tiimg.com/717505/e5c36e7704b39981.jpg)
+![Alt text](https://img.supervj.top/imgd5.jpg)
 
 ##### 注意
 
@@ -79,17 +78,17 @@ skin修改器会被自动禁用，然后就可以进入下一步骤
 
 
 
-### 3.UE4部分
+### UE4部分
 
 ##### 导入模型
 
-<img src="http://i2.tiimg.com/717505/e723d3a72c4f8a1e.jpg" style="zoom:50%;" />
+![](https://img.supervj.top/imgvertexAnim_ImportMesh.jpg)
 
 - 如图所示选项需要设置
 
 ##### EXR贴图
 
-<img src="http://i2.tiimg.com/717505/e102e631c9e0ea14.jpg" style="zoom:50%;" />
+![](https://img.supervj.top/imgvertexAnim_EXR.jpg)
 
 - 参数设置如图
   - sRGB需要去掉
@@ -99,7 +98,7 @@ skin修改器会被自动禁用，然后就可以进入下一步骤
 
 ##### Normal贴图
 
-<img src="http://i2.tiimg.com/717505/f03033ff39f24ca5.jpg" style="zoom:50%;" />
+![](https://img.supervj.top/imgvertexAnim_nor.jpg)
 
 - 参数设置
   - sRGB去掉
@@ -108,7 +107,7 @@ skin修改器会被自动禁用，然后就可以进入下一步骤
 
 ##### 材质球
 
-<img src="http://i2.tiimg.com/717505/1ad30214e2f10487.jpg" style="zoom:50%;" />
+![](https://img.supervj.top/imgvertexAnim_mat.jpg)
 
 - 使用UE自带的材质函数
   - 设置材质球的TangentSpaceNormal选项为false
@@ -120,7 +119,7 @@ skin修改器会被自动禁用，然后就可以进入下一步骤
 
 
 
-### 4.脚本核心功能解释
+### 脚本核心功能解释
 
 ##### 顶点缓存脚本
 

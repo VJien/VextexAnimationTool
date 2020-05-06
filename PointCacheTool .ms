@@ -6,7 +6,7 @@ rollout PointCacheTool "顶点缓存工具 "
 group "设置" 
 (
 	
-	edittext PCPath "路径" text:"D:/"	
+	edittext PCPath "路径" 	
 	button _SaveFolder "选择缓存保存路径" width:130
 	on _SaveFolder pressed do 
 	(
